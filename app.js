@@ -1,14 +1,21 @@
+// Dotenv
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
+// Express
 const express = require('express')
 const app = express()
 
+// Import and set up handlebars
 const exphbs = require('express-handlebars')
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.render('index')
 })
 
-app.listen(3333, () => {
-  console.log('Server started on port 3333')
+app.listen(process.env.PORT, () => {
+  console.log('The server is running on port', process.env.PORT)
 })
