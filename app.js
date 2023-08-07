@@ -12,12 +12,11 @@ const teamup = require('./middleware/teamup')
 
 // Import and set up handlebars
 const exphbs = require('express-handlebars')
-const teamupMiddleware = require('./middleware/teamup')
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 app.use(express.urlencoded({ extended: true }))
-app.use(teamupMiddleware)
+app.use(teamup)
 
 // Routes
 app.get('/', (req, res) => {

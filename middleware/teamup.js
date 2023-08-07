@@ -1,6 +1,6 @@
 const https = require('https')
 
-const teamupMiddleware = (req, res, next) => {
+const teamup = (req, res, next) => {
   const options = {
     hostname: 'api.teamup.com',
     path: `/${process.env.CALENDAR_ID}/events?startDate=2023-08-07&endDate=2023-08-11`,
@@ -29,4 +29,4 @@ const teamupMiddleware = (req, res, next) => {
 }
 
 
-module.exports = teamupMiddleware
+module.exports = teamup
