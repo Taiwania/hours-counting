@@ -18,7 +18,6 @@ const teamupMiddleware = (req, res, next) => {
   
     res.on('end', () => {
       let receiveDataAsJSON = JSON.parse(data)
-      console.log(receiveDataAsJSON)
       req.teamupData = receiveDataAsJSON
       next()
     })

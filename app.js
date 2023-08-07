@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+// Check api data
+app.get('/teamup-data', (req, res) => {
+  res.json(req.teamupData.events)
+})
+
 // Listener
 app.listen(process.env.PORT, () => {
   console.log('The server is running on port', process.env.PORT)
